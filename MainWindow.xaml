@@ -1,0 +1,53 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="417" Width="800">
+    <Grid Margin="0,0,0,1">
+        <GroupBox Header="Administrar Productos" Margin="10,10,501,10" Foreground="#FFC65D2A"/>
+
+        <ComboBox x:Name="ComboProductos" HorizontalAlignment="Left" Margin="30,68,0,0" VerticalAlignment="Top" Width="180">
+            <ComboBoxItem Content="Café Americano        S/ 6.00"/>
+            <ComboBoxItem Content="Capuccino                 S/ 8.00"/>
+            <ComboBoxItem Content="Latte                          S/ 9.00"/>
+            <ComboBoxItem Content="Chocolate caliente    S/ 8.50"/>
+            <ComboBoxItem Content="Mocaccino                S/ 10.00"/>
+        </ComboBox>
+
+        <Label Content="Tamaño" HorizontalAlignment="Left" Margin="30,95,0,0" VerticalAlignment="Top" Width="90" Foreground="#FFF68725" FontSize="16" FontWeight="Bold"/>
+        <RadioButton x:Name="rdBtnPequenio" Content="Pequeño" Margin="0,135,680,0" VerticalAlignment="Top" FontSize="14" Foreground="Black" HorizontalAlignment="Right" Width="74"/>
+        <RadioButton x:Name="rdBtnMediano" Content="Mediano" HorizontalAlignment="Right" Margin="0,163,680,0" VerticalAlignment="Top" FontSize="14" Foreground="Black" RenderTransformOrigin="0.52,0.793"/>
+        <RadioButton x:Name="rdBtnGrande" Content="Grande" HorizontalAlignment="Right" Margin="0,189,690,0" VerticalAlignment="Top" FontSize="14" Foreground="Black" RenderTransformOrigin="0.52,0.793"/>
+
+        <Label Content="Adicional" HorizontalAlignment="Left" Margin="30,212,0,0" VerticalAlignment="Top" Width="90" Foreground="#FFF68725" FontSize="16" FontWeight="Bold"/>
+        <CheckBox x:Name="checkLeche" Content="Leche Extra (S/ 1.50)" HorizontalAlignment="Left" Margin="34,252,0,0" VerticalAlignment="Top" Width="130"/>
+        <CheckBox x:Name="checkChantilly" Content="Crema Chantilly (S/ 2.00)" HorizontalAlignment="Left" Margin="34,275,0,0" VerticalAlignment="Top" Width="153"/>
+        <CheckBox x:Name="checkCafe" Content="Shot adicional de café (S/ 2.50)" HorizontalAlignment="Left" Margin="34,298,0,0" VerticalAlignment="Top" Width="188"/>
+
+        <Label Content="Productos" HorizontalAlignment="Left" Margin="30,32,0,0" VerticalAlignment="Top" Width="90" Foreground="#FFF68725" FontSize="16" FontWeight="Bold"/>
+
+
+        <GroupBox Header="Resumen del Pedido" Margin="328,10,10,10" Foreground="#FFB5491D" />
+
+        <Label Content="Producto:" HorizontalAlignment="Left" Margin="356,32,0,0" VerticalAlignment="Top" Width="115" Foreground="#FFF68725" FontWeight="Bold" FontSize="16"/>
+
+        <!-- ERROR CORREGIDO: Se eliminó el "HorizontalAlignment=Center" duplicado -->
+        <Label x:Name="ProductoSeleccionado" Content="" HorizontalAlignment="Left" Margin="503,37,0,0" VerticalAlignment="Top" Width="230" Background="#FFD17810" Foreground="White"/>
+
+        <Label Content="Precio Base:" HorizontalAlignment="Left" Margin="356,89,0,0" VerticalAlignment="Top" Width="115" Foreground="#FFF68725" FontWeight="Bold" FontSize="16"/>
+
+
+        <Label x:Name="Precio_Base" Content="" HorizontalAlignment="Left" Margin="503,95,0,0" VerticalAlignment="Top" Width="230" Background="#FFD17810" IsEnabled="False" Foreground="White" />
+        <Label Content="Tamaño:" HorizontalAlignment="Left" Margin="356,150,0,0" VerticalAlignment="Top" Width="115" Foreground="#FFF68725" FontWeight="Bold" FontSize="16"/>
+        <Label x:Name="Tamanio" Content="" HorizontalAlignment="Left" Margin="503,154,0,0" VerticalAlignment="Top" Width="230" Background="#FFD17810" IsEnabled="False" Foreground="White" />
+        <Label Content="Adicionales:" HorizontalAlignment="Left" Margin="356,205,0,0" VerticalAlignment="Top" Width="115" Foreground="#FFF68725" FontWeight="Bold" FontSize="16"/>
+        <ListBox x:Name="Adicionales" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="503,212,36,120" SelectionChanged="ListBox_SelectionChanged" Background="#FFD17810" Foreground="White"/>
+        <Label x:Name="Total" Content="" HorizontalAlignment="Left" Margin="469,296,0,0" VerticalAlignment="Top" Width="295" Background="#FFD17810" IsEnabled="False" Foreground="White" />
+        <Label Content="Total:" HorizontalAlignment="Left" Margin="356,291,0,0" VerticalAlignment="Top" Width="68" Foreground="#FFF68725" FontWeight="Bold" FontSize="16"/>
+        <Button Content="Agregar Pedido" HorizontalAlignment="Left" Margin="436,336,0,0" VerticalAlignment="Top" Width="100" Height="26" Background="#FF7AF06A" Foreground="#FF413434" Click="Button_Click"/>
+        <Button Content="Limpiar" HorizontalAlignment="Left" Margin="584,336,0,0" VerticalAlignment="Top" Width="100" Height="26" Foreground="#FFFAFAFA" Background="#FF2789AB" Click="Button_Click_1"/>
+    </Grid>
+</Window>
